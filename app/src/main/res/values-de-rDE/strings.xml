@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Miwok</string>
+    <string name="category_colors">Farben</string>
+    <string name="category_family">Familie</string>
+    <string name="category_numbers">Zahlen</string>
+    <string name="category_phrases">Phrasen</string>
+    <string name="test">Test</string>
+    <string name="Eight">Acht</string>
+    <string name="Five">Fünf</string>
+    <string name="Four">Vier</string>
+    <string name="Nine">Neun</string>
+    <string name="One">Eins</string>
+    <string name="Seven">Sieben</string>
+    <string name="Six">Sechs</string>
+    <string name="Ten">Zehn</string>
+    <string name="Three">Drei</string>
+    <string name="Two">Zwei</string>
+</resources>

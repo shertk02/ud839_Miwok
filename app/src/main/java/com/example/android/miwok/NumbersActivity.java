@@ -24,5 +24,17 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+        String[] numberWords = new String[10];
+        numberWords[0]=getString(R.string.One);
+        numberWords[1]=getString(R.string.Two);
+        numberWords[2]=getString(R.string.Three);
+        numberWords[3]=getString(R.string.Four);
+        numberWords[4]=getString(R.string.Five);
+        numberWords[5]=getString(R.string.Six);
+        numberWords[6]=getString(R.string.Seven);
+        numberWords[7]=getString(R.string.Eight);
+        numberWords[8]=getString(R.string.Nine);
+        numberWords[9]=getString(R.string.Ten);
+
     }
 }
