@@ -17,6 +17,14 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -24,17 +32,24 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
-        String[] numberWords = new String[10];
-        numberWords[0]=getString(R.string.One);
-        numberWords[1]=getString(R.string.Two);
-        numberWords[2]=getString(R.string.Three);
-        numberWords[3]=getString(R.string.Four);
-        numberWords[4]=getString(R.string.Five);
-        numberWords[5]=getString(R.string.Six);
-        numberWords[6]=getString(R.string.Seven);
-        numberWords[7]=getString(R.string.Eight);
-        numberWords[8]=getString(R.string.Nine);
-        numberWords[9]=getString(R.string.Ten);
+        ArrayList<String> numberWords = new ArrayList<>();
+
+        numberWords.add(getString(R.string.One));
+        numberWords.add(getString(R.string.Two));
+        numberWords.add(getString(R.string.Three));
+        numberWords.add(getString(R.string.Four));
+        numberWords.add(getString(R.string.Five));
+        numberWords.add(getString(R.string.Six));
+        numberWords.add(getString(R.string.Seven));
+        numberWords.add(getString(R.string.Eight));
+        numberWords.add(getString(R.string.Nine));
+        numberWords.add(getString(R.string.Ten));
+
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, numberWords);
+
+        ListView listView = findViewById(R.id.list);
+
+        listView.setAdapter(itemsAdapter);
 
     }
 }
