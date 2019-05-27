@@ -1,5 +1,7 @@
 package com.example.android.miwok;
 
+import android.content.res.Resources;
+
 /**
  *{@link Word} represents a vocabulary word that the user wants to learn.
  * It contains a default translation and a Miwok translation for that worg
@@ -10,16 +12,32 @@ public class Word {
     private String mMiwokTranslation;
     /** Default translation for the word */
     private String mDefaultTranslation;
+    /** Resource ID of the associated image */
+    private int mImageId = NO_IMAGE_PROVIDED;
+    /** control for available image */
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Create a Word object containing both translations
      * @param miwokTranslation Miwok translation
      * @param defaultTranslation default translation
      */
-    public Word(String defaultTranslation,String miwokTranslation ) {
-        mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
+    public Word(String defaultTranslation,String miwokTranslation) {
+        this.mDefaultTranslation = defaultTranslation;
+        this.mMiwokTranslation = miwokTranslation;
     }
+
+    /**
+     * Create a Word object containing both translations
+     * @param miwokTranslation Miwok translation
+     * @param defaultTranslation default translation
+     * @param image image resource
+     */
+    public Word(String defaultTranslation,String miwokTranslation, int image ) {
+        this.mDefaultTranslation = defaultTranslation;
+        this.mMiwokTranslation = miwokTranslation;
+        this.mImageId = image;
+     }
 
     /**
      * Get Miwok translation
@@ -30,14 +48,6 @@ public class Word {
     }
 
     /**
-     * Set the Miwok translation
-     * @param miwokTranslation Miwok translation
-     */
-    public void setMiwokTranslation(String miwokTranslation) {
-        this.mMiwokTranslation = miwokTranslation;
-    }
-
-    /**
      * Get default translation
      * @return get the default translation
      */
@@ -45,33 +55,11 @@ public class Word {
         return mDefaultTranslation;
     }
 
-    /**
-     * Set the default translation
-     * @param defaultTranslation default translation
-     */
-    public void setDefaultTranslation(String defaultTranslation) {
-        this.mDefaultTranslation = defaultTranslation;
+    public int getImageResourceId(){
+        return mImageId;
     }
 
-    /**
-     * Get a String[] with both translations in the order [Miwok, Default]
-     * @return [0]Miwok, [1]Default
-     */
-    public String[] getBothTranslations() {
-        String[] bothTranslations = new String[2];
-        bothTranslations[0]=mMiwokTranslation;
-        bothTranslations[1]=mDefaultTranslation;
-        return bothTranslations;
+    public boolean hasImage() {
+        return mImageId != NO_IMAGE_PROVIDED;
     }
-
-    /**
-     * Change both translations
-     * @param miwokTranslation miwok translation
-     * @param defaultTranslation default translation
-     */
-    public void setBothTranslations(String miwokTranslation,String defaultTranslation){
-        this.mMiwokTranslation = miwokTranslation;
-        this.mDefaultTranslation = defaultTranslation;
-    }
-
 }

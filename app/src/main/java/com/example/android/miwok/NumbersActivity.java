@@ -29,18 +29,18 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
         ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word(getString(R.string.One),"lutti"));
-        words.add(new Word(getString(R.string.Two), "otiiko"));
-        words.add(new Word(getString(R.string.Three),"lolookosu"));
-        words.add(new Word(getString(R.string.Four),"oyyisa"));
-        words.add(new Word(getString(R.string.Five),"massokka"));
-        words.add(new Word(getString(R.string.Six), "temmokka"));
-        words.add(new Word(getString(R.string.Seven),"kenekaku"));
-        words.add(new Word(getString(R.string.Eight),"kawinta"));
-        words.add(new Word(getString(R.string.Nine),"wo'e"));
-        words.add(new Word(getString(R.string.Ten),"na'aacha"));
+        words.add(new Word(getString(R.string.One),"lutti",R.drawable.number_one));
+        words.add(new Word(getString(R.string.Two), "otiiko",R.drawable.number_two));
+        words.add(new Word(getString(R.string.Three),"lolookosu",R.drawable.number_three));
+        words.add(new Word(getString(R.string.Four),"oyyisa",R.drawable.number_four));
+        words.add(new Word(getString(R.string.Five),"massokka",R.drawable.number_five));
+        words.add(new Word(getString(R.string.Six), "temmokka",R.drawable.number_six));
+        words.add(new Word(getString(R.string.Seven),"kenekaku",R.drawable.number_seven));
+        words.add(new Word(getString(R.string.Eight),"kawinta",R.drawable.number_eight));
+        words.add(new Word(getString(R.string.Nine),"wo'e",R.drawable.number_nine));
+        words.add(new Word(getString(R.string.Ten),"na'aacha",R.drawable.number_ten));
 
-        WordAdapter adapter = new WordAdapter(this, words);
+        WordAdapter adapter = new WordAdapter(this, words,R.color.category_numbers);
 
         ListView listView = findViewById(R.id.list);
 
