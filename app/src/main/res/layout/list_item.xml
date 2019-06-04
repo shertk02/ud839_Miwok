@@ -14,7 +14,8 @@
         android:background="@color/tan_background" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="16dp"

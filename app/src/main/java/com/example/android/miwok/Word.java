@@ -13,31 +13,31 @@ public class Word {
     /** Default translation for the word */
     private String mDefaultTranslation;
     /** Resource ID of the associated image */
-    private int mImageId = NO_IMAGE_PROVIDED;
+    private int mImageId = NO_SOURCE_PROVIDED;
     /** control for available image */
-    private static final int NO_IMAGE_PROVIDED = -1;
+    private static final int NO_SOURCE_PROVIDED = -1;
+
+    private int mAudioId;
+
 
     /**
      * Create a Word object containing both translations
      * @param miwokTranslation Miwok translation
      * @param defaultTranslation default translation
+     * @param audioId audio resource
      */
-    public Word(String defaultTranslation,String miwokTranslation) {
+    public Word(String defaultTranslation,String miwokTranslation, int audioId) {
         this.mDefaultTranslation = defaultTranslation;
         this.mMiwokTranslation = miwokTranslation;
-    }
+        this.mAudioId = audioId;
+     }
 
-    /**
-     * Create a Word object containing both translations
-     * @param miwokTranslation Miwok translation
-     * @param defaultTranslation default translation
-     * @param image image resource
-     */
-    public Word(String defaultTranslation,String miwokTranslation, int image ) {
+    public Word(String defaultTranslation,String miwokTranslation, int image, int audioId) {
         this.mDefaultTranslation = defaultTranslation;
         this.mMiwokTranslation = miwokTranslation;
         this.mImageId = image;
-     }
+        this.mAudioId = audioId;
+    }
 
     /**
      * Get Miwok translation
@@ -59,7 +59,19 @@ public class Word {
         return mImageId;
     }
 
+    public int getAudioResourceId() { return mAudioId; }
+
     public boolean hasImage() {
-        return mImageId != NO_IMAGE_PROVIDED;
+        return mImageId != NO_SOURCE_PROVIDED;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mImageId=" + mImageId +
+                ", mAudioId=" + mAudioId +
+                '}';
     }
 }
